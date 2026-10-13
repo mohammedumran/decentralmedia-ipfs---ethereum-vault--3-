@@ -1,0 +1,320 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: var(--theme-font, 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif);
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+  
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Dynamic Border Radius Overrides */
+html[data-theme] .rounded-xl,
+html[data-theme] .rounded-2xl {
+  border-radius: var(--theme-radius, 12px);
+}
+
+/* Background Patterns */
+html[data-pattern="grid"] body {
+  background-image: 
+    linear-gradient(to right, rgba(var(--theme-accent-rgb, 6, 182, 212), 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(var(--theme-accent-rgb, 6, 182, 212), 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+html[data-pattern="dots"] body {
+  background-image: radial-gradient(rgba(var(--theme-accent-rgb, 6, 182, 212), 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+html[data-pattern="glow"] body {
+  background-image: radial-gradient(circle at 50% 0%, rgba(var(--theme-accent-rgb, 6, 182, 212), 0.15), transparent 50%);
+  background-repeat: no-repeat;
+}
+
+/* Light / White Mode Overrides */
+html.light {
+  color-scheme: light;
+}
+
+html.light body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html.light .bg-slate-950 {
+  background-color: #f8fafc !important;
+}
+
+html.light .bg-slate-900 {
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+}
+
+html.light .bg-slate-900\/90,
+html.light .bg-slate-900\/95,
+html.light .bg-slate-900\/80 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+html.light .bg-slate-950\/90,
+html.light .bg-slate-950\/80,
+html.light .bg-slate-950\/70,
+html.light .bg-slate-950\/50 {
+  background-color: #f1f5f9 !important;
+}
+
+html.light .border-slate-900,
+html.light .border-slate-800,
+html.light .border-slate-800\/80,
+html.light .border-slate-800\/90,
+html.light .border-slate-800\/60,
+html.light .border-slate-800\/40 {
+  border-color: #e2e8f0 !important;
+}
+
+html.light .border-slate-700 {
+  border-color: #cbd5e1 !important;
+}
+
+html.light .text-slate-100,
+html.light .text-slate-200 {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-400 {
+  color: #64748b !important;
+}
+
+html.light .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+html.light input,
+html.light textarea,
+html.light select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* OLED Pure Black Theme */
+html.theme-oled {
+  background-color: #000000 !important;
+}
+html.theme-oled body,
+html.theme-oled .bg-slate-950 {
+  background-color: #000000 !important;
+}
+html.theme-oled .bg-slate-900 {
+  background-color: #080808 !important;
+  border-color: #1a1a1a !important;
+}
+html.theme-oled .from-slate-900 {
+  --tw-gradient-from: #080808 var(--tw-gradient-from-position) !important;
+}
+html.theme-oled .to-slate-950 {
+  --tw-gradient-to: #000000 var(--tw-gradient-to-position) !important;
+}
+html.theme-oled .border-slate-800 {
+  border-color: #1a1a1a !important;
+}
+html.theme-oled .bg-slate-950\/80,
+html.theme-oled .bg-slate-950\/90 {
+  background-color: #040404 !important;
+}
+
+/* Midnight Indigo Theme */
+html.theme-midnight body,
+html.theme-midnight .bg-slate-950 {
+  background-color: #090814 !important;
+}
+html.theme-midnight .bg-slate-900 {
+  background-color: #120f26 !important;
+  border-color: #27214d !important;
+}
+html.theme-midnight .from-slate-900 {
+  --tw-gradient-from: #120f26 var(--tw-gradient-from-position) !important;
+}
+html.theme-midnight .to-slate-950 {
+  --tw-gradient-to: #090814 var(--tw-gradient-to-position) !important;
+}
+html.theme-midnight .border-slate-800 {
+  border-color: #27214d !important;
+}
+
+/* Matrix Terminal Theme */
+html.theme-matrix body,
+html.theme-matrix .bg-slate-950 {
+  background-color: #040d06 !important;
+}
+html.theme-matrix .bg-slate-900 {
+  background-color: #0a1a0d !important;
+  border-color: #143d1a !important;
+}
+html.theme-matrix .from-slate-900 {
+  --tw-gradient-from: #0a1a0d var(--tw-gradient-from-position) !important;
+}
+html.theme-matrix .to-slate-950 {
+  --tw-gradient-to: #040d06 var(--tw-gradient-to-position) !important;
+}
+html.theme-matrix .border-slate-800 {
+  border-color: #143d1a !important;
+}
+
+/* User Custom Dynamic Theme Overrides */
+html.theme-custom body,
+html.theme-custom .bg-slate-950 {
+  background-color: var(--theme-bg) !important;
+  color: var(--theme-text) !important;
+}
+
+html.theme-custom .bg-slate-900 {
+  background-color: var(--theme-surface) !important;
+  border-color: var(--theme-border) !important;
+}
+
+html.theme-custom .bg-slate-950\/90,
+html.theme-custom .bg-slate-950\/80,
+html.theme-custom .bg-slate-950\/70,
+html.theme-custom .bg-slate-950\/50 {
+  background-color: rgba(var(--theme-accent-rgb, 6, 182, 212), 0.05) !important;
+}
+
+html.theme-custom .border-slate-800,
+html.theme-custom .border-slate-900,
+html.theme-custom .border-slate-700 {
+  border-color: var(--theme-border) !important;
+}
+
+/* ============================================================
+   GLOBAL DYNAMIC ACCENT APPLICATION
+   Maps all cyan classes to the user's active theme accent color
+   ============================================================ */
+:root {
+  --theme-accent: #06b6d4;
+  --theme-accent-rgb: 6, 182, 212;
+  --theme-accent-glow: #22d3ee;
+}
+
+/* Primary buttons and background fills */
+.bg-cyan-500,
+.bg-cyan-400,
+.bg-cyan-600 {
+  background-color: var(--theme-accent) !important;
+}
+
+.hover\:bg-cyan-400:hover,
+.hover\:bg-cyan-500:hover {
+  background-color: var(--theme-accent-glow, var(--theme-accent)) !important;
+}
+
+/* Text highlights */
+.text-cyan-400,
+.text-cyan-500 {
+  color: var(--theme-accent) !important;
+}
+
+.text-cyan-300,
+.text-cyan-200 {
+  color: var(--theme-accent-glow, var(--theme-accent)) !important;
+}
+
+.hover\:text-cyan-300:hover,
+.hover\:text-cyan-200:hover {
+  color: var(--theme-accent-glow, var(--theme-accent)) !important;
+}
+
+/* Borders and Rings */
+.border-cyan-500,
+.border-cyan-400 {
+  border-color: var(--theme-accent) !important;
+}
+
+.border-cyan-500\/40,
+.border-cyan-500\/30,
+.border-cyan-500\/50,
+.border-cyan-500\/20,
+.border-cyan-700\/50,
+.border-cyan-800\/50,
+.border-cyan-800\/60,
+.hover\:border-cyan-500\/50:hover,
+.hover\:border-cyan-500\/60:hover {
+  border-color: rgba(var(--theme-accent-rgb, 6, 182, 212), 0.4) !important;
+}
+
+.ring-cyan-500,
+.ring-cyan-400,
+.focus\:border-cyan-500:focus,
+.focus\:ring-cyan-500:focus {
+  border-color: var(--theme-accent) !important;
+  --tw-ring-color: var(--theme-accent) !important;
+}
+
+/* Translucent tinted backgrounds */
+.bg-cyan-500\/10,
+.bg-cyan-500\/15,
+.bg-cyan-500\/20,
+.bg-cyan-500\/25,
+.bg-cyan-500\/30,
+.hover\:bg-cyan-500\/20:hover,
+.hover\:bg-cyan-500\/30:hover,
+.bg-cyan-950,
+.bg-cyan-950\/40,
+.bg-cyan-950\/60,
+.bg-cyan-950\/80,
+.bg-cyan-950\/90 {
+  background-color: rgba(var(--theme-accent-rgb, 6, 182, 212), 0.16) !important;
+}
+
+/* Gradients */
+.from-cyan-500,
+.from-cyan-400 {
+  --tw-gradient-from: var(--theme-accent) var(--tw-gradient-from-position) !important;
+}
+
+.to-cyan-500,
+.to-cyan-400 {
+  --tw-gradient-to: var(--theme-accent) var(--tw-gradient-to-position) !important;
+}
+
+.shadow-cyan-500\/20,
+.shadow-cyan-500\/10,
+.shadow-cyan-500\/30 {
+  --tw-shadow-color: rgba(var(--theme-accent-rgb, 6, 182, 212), 0.28) !important;
+}
+
+.accent-cyan-500 {
+  accent-color: var(--theme-accent) !important;
+}
+
+/* Custom Web3 Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+html.light ::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.9);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--theme-accent-rgb, 51, 65, 85), 0.6);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-accent, rgba(100, 116, 139, 1));
+}
