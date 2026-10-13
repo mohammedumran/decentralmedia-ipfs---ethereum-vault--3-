@@ -1,0 +1,95 @@
+{
+  "name": "saus - Decentralized Media Vault",
+  "short_name": "saus",
+  "description": "Decentralized media database for images and videos with IPFS storage, Ethereum smart contract access control, and Cipher AI assistant.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "dir": "ltr",
+  "lang": "en-US",
+  "categories": ["utilities", "productivity", "photo", "video"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Upload Media",
+      "short_name": "Upload",
+      "description": "Upload and pin photos or videos to decentralized IPFS storage",
+      "url": "/?action=upload",
+      "icons": [
+        {
+          "src": "/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Redeem Code",
+      "short_name": "Redeem",
+      "description": "Unlock media using a unique access code",
+      "url": "/?action=redeem",
+      "icons": [
+        {
+          "src": "/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Cipher AI Assistant",
+      "short_name": "Cipher AI",
+      "description": "Chat with cryptographic media assistant",
+      "url": "/?action=assistant",
+      "icons": [
+        {
+          "src": "/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Host Nodes",
+      "short_name": "IPFS Nodes",
+      "description": "Monitor IPFS cluster storage nodes and health",
+      "url": "/?action=hosts",
+      "icons": [
+        {
+          "src": "/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "mediaFiles": [
+    {
+      "id": "med-prism-art-01",
+      "name": "Prism_Geometry_Art.jpg",
+      "type": "image",
+      "mimeType": "image/jpeg",
+      "sizeBytes": 675958,
+      "url": "/uploads/vault_master_artwork.jpg",
+      "thumbnailUrl": "/uploads/vault_master_artwork.jpg",
+      "ipfsCid": "bafybeicikwtuoqjt3fye3cua3nyzwibanrreg7rvmqcvh7kyr3ioke54qj",
+      "cidVersion": "v1",
+      "sha256Hash": "0x1ebf0611fc8e6ccc588cca857a6a339d2f9d902389eb9597e58e74fe229c17ff",
+      "keccak256Hash": "0xd2b35cfb779c8949555007eb1d95dd43e62e7ee94de771f3eaa0208ea9143eec",
+      "uploadTimestamp": 1791398228036,
+      "ownerAddress": "0x32a30c65da6957229b38c59ca34054662e3576cd",
+      "metadata": {
+        "description": "Decentralized geometric architectural art pinned across IPFS swarm nodes.",
+        "tags": [
+          "Decentralized",
+          "IPFS",
+          "Architecture",
+          "FineArt"
+        ],
+        "width": 1792,
+        "height": 1024,
+        "resolution": "1792x1024",
+        "codec": "JPEG / High-Fidelity",
+        "customFields": [],
+        "encryption": "none",
+        "unixFsChunkSize": "256 KB DAG-PB"
+      },
+      "accessControl": {
+        "mode": "restricted",
+        "allowedAddresses": [],
+        "allowedEmails": [],
+        "uniqueAccessCode": "IPFS-SEC-6926-4CC1-8243",
+        "codeRedemptions": 0,
+        "allowDownload": true
+      },
+      "pinningState": {
+        "isPinned": true,
+        "pinnedNodes": [
+          "node-us-east-01",
+          "node-eu-central-02"
+        ],
+        "replicationFactor": 2,
+        "primaryHostNodeId": "node-us-east-01",
+        "storageUsageBytes": 675958,
+        "lastSyncTimestamp": 1791398228036
+      },
+      "transferHistory": []
+    }
+  ],
+  "transactions": [
+    {
+      "txHash": "0xb1aff1db523c9794ec7a30aa2d54e27d666ab766442d061b9b45b35ef09c892a",
+      "blockNumber": 19488123,
+      "timestamp": 1791398228036,
+      "from": "0x32a30c65da6957229b38c59ca34054662e3576cd",
+      "to": "0xDECE9712aC0a6311E6a635DeB06292b3aD853A81",
+      "method": "storeMedia",
+      "status": "confirmed",
+      "gasUsed": 139128,
+      "gasFeeEth": 0.0028,
+      "fileId": "med-muyg930g-lgwz",
+      "fileName": "watermarked_img_4194939748879190162.jpg",
+      "eventLogs": [
+        "MediaStored(cid=bafybeicikwtuo..., owner=0x32a30c65..., mode=private)"
+      ],
+      "params": {
+        "cid": "bafybeicikwtuoqjt3fye3cua3nyzwibanrreg7rvmqcvh7kyr3ioke54qj",
+        "accessMode": "private",
+        "uniqueCode": "IPFS-SEC-6926-4CC1-8243",
+        "pinnedNodesCount": 2
+      }
+    },
+    {
+      "txHash": "0x50c7cc8ab1c0dddc0eeccde72d557de07e1e424c874b8e233985a20e22a5fc47",
+      "blockNumber": 19485432,
+      "timestamp": 1791398207884,
+      "from": "0x32a30c65da6957229b38c59ca34054662e3576cd",
+      "to": "0xDECE9712aC0a6311E6a635DeB06292b3aD853A81",
+      "method": "storeMedia",
+      "status": "confirmed",
+      "gasUsed": 130725,
+      "gasFeeEth": 0.0028,
+      "fileId": "med-muyg8ng1-98ok",
+      "fileName": "watermarked_img_4194939748879190162.jpg",
+      "eventLogs": [
+        "MediaStored(cid=bafybeicikwtuo..., owner=0x32a30c65..., mode=public)"
+      ],
+      "params": {
+        "cid": "bafybeicikwtuoqjt3fye3cua3nyzwibanrreg7rvmqcvh7kyr3ioke54qj",
+        "accessMode": "public",
+        "uniqueCode": "IPFS-SEC-BA65-5A49-1066",
+        "pinnedNodesCount": 2
+      }
+    },
+    {
+      "txHash": "0xbdd81f85bffe60d899382ef0876f5e031ac352249eb045f9a1f4639cd1bc7b77",
+      "blockNumber": 19489027,
+      "timestamp": 1790876719259,
+      "from": "0x32a30c65da6957229b38c59ca34054662e3576cd",
+      "to": "0xDECE9712aC0a6311E6a635DeB06292b3aD853A81",
+      "method": "grantAccess",
+      "status": "confirmed",
+      "gasUsed": 65000,
+      "gasFeeEth": 0.0014,
+      "fileId": "med-muptouiy-vwiq",
+      "fileName": "watermarked_img_4194939748879190162.jpg",
+      "eventLogs": [
+        "AccessUpdated(fileId=med-muptouiy-vwiq, mode=public)"
+      ],
+      "params": {
+        "mode": "public",
+        "allowedAddresses": [],
+        "allowedEmails": []
+      }
+    },
+    {
+      "txHash": "0x7d78a92363f8ac7e17e3f3e1ce3ac651d7ae78478710ea989760e88e0db9eac8",
+      "blockNumber": 19485307,
+      "timestamp": 1790876602964,
+      "from": "0x32a30c65da6957229b38c59ca34054662e3576cd",
+      "to": "0xDECE9712aC0a6311E6a635DeB06292b3aD853A81",
+      "method": "storeMedia",
+      "status": "confirmed",
+      "gasUsed": 135640,
+      "gasFeeEth": 0.0028,
+      "fileId": "med-muptouiy-vwiq",
+      "fileName": "watermarked_img_4194939748879190162.jpg",
+      "eventLogs": [
+        "MediaStored(cid=bafybeicikwtuo..., owner=0x32a30c65..., mode=private)"
+      ],
+      "params": {
+        "cid": "bafybeicikwtuoqjt3fye3cua3nyzwibanrreg7rvmqcvh7kyr3ioke54qj",
+        "accessMode": "private",
+        "uniqueCode": "IPFS-SEC-1499-D136-A3D4",
+        "pinnedNodesCount": 2
+      }
+    },
+    {
+      "txHash": "0x7fa571af393572d32acfe326c041a9e964333c9a5a2c9bdac593eb8fccd4cefd",
+      "blockNumber": 19489013,
+      "timestamp": 1790876398677,
+      "from": "0x32a30c65da6957229b38c59ca34054662e3576cd",
+      "to": "0xDECE9712aC0a6311E6a635DeB06292b3aD853A81",
+      "method": "storeMedia",
+      "status": "confirmed",
+      "gasUsed": 129831,
+      "gasFeeEth": 0.0028,
+      "fileId": "med-muptkgvl-uhbc",
+      "fileName": "watermarked_img_4194939748879190162.jpg",
+      "eventLogs": [
+        "MediaStored(cid=bafybeicikwtuo..., owner=0x32a30c65..., mode=public)"
+      ],
+      "params": {
+        "cid": "bafybeicikwtuoqjt3fye3cua3nyzwibanrreg7rvmqcvh7kyr3ioke54qj",
+        "accessMode": "public",
+        "uniqueCode": "IPFS-SEC-8409-79BA-733F",
+        "pinnedNodesCount": 2
+      }
+    },
+    {
+      "txHash": "0xece3fe3a8ee697f6c43d8e8c8bd7d4ad4ee7a5230c8902a2b6f300c41f376efb",
+      "blockNumber": 19486661,
+      "timestamp": 1790757023241,
+      "from": "0x32a30c65da6957229b38c59ca34054662e3576cd",
+      "to": "0xDECE9712aC0a6311E6a635DeB06292b3aD853A81",
+      "method": "storeMedia",
+      "status": "confirmed",
+      "gasUsed": 126731,
+      "gasFeeEth": 0.0028,
+      "fileId": "med-munuhudi-59q3",
+      "fileName": "watermarked_img_4194939748879190162.jpg",
+      "eventLogs": [
+        "MediaStored(cid=bafybeicikwtuo..., owner=0x32a30c65..., mode=private)"
+      ],
+      "params": {
+        "cid": "bafybeicikwtuoqjt3fye3cua3nyzwibanrreg7rvmqcvh7kyr3ioke54qj",
+        "accessMode": "private",
+        "uniqueCode": "IPFS-SEC-E011-0A20-5A21",
+        "pinnedNodesCount": 4
+      }
+    },
+    {
+      "txHash": "0x429b442626e14e9bac3a7e27eb26896090b09fd594ff9352f35561ebc5c5baad",
+      "blockNumber": 19487767,
+      "timestamp": 1790756689756,
+      "from": "0x32a30c65da6957229b38c59ca34054662e3576cd",
+      "to": "0xDECE9712aC0a6311E6a635DeB06292b3aD853A81",
+      "method": "storeMedia",
+      "status": "confirmed",
+      "gasUsed": 125074,
+      "gasFeeEth": 0.0028,
+      "fileId": "med-munuap21-arwk",
+      "fileName": "watermarked_img_4194939748879190162.jpg",
+      "eventLogs": [
+        "MediaStored(cid=bafybeicikwtuo..., owner=0x32a30c65..., mode=public)"
+      ],
+      "params": {
+        "cid": "bafybeicikwtuoqjt3fye3cua3nyzwibanrreg7rvmqcvh7kyr3ioke54qj",
+        "accessMode": "public",
+        "uniqueCode": "IPFS-SEC-E011-0A20-5A21",
+        "pinnedNodesCount": 2
+      }
+    }
+  ],
+  "users": [
+    {
+      "address": "0x32a30c65da6957229b38c59ca34054662e3576cd",
+      "name": "Public Explorer"
+    }
+  ]
+}
