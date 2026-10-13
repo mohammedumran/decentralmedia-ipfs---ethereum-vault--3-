@@ -124,25 +124,25 @@ export const UserWalletModal: React.FC<UserWalletModalProps> = ({ isOpen, onClos
       <div className="relative w-full max-w-lg bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden my-auto flex flex-col max-h-[90vh]">
         
         {/* Modal Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-950/60 flex-shrink-0">
-          <div className="flex items-center gap-3">
+        <div className="flex items-center justify-between gap-3 px-6 py-4 border-b border-slate-800 bg-slate-950/60 flex-shrink-0">
+          <div className="flex items-center gap-3 min-w-0 flex-1">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-600 to-indigo-600 flex items-center justify-center text-sm font-bold text-white shadow-md shadow-cyan-500/20">
               {currentUser.name.charAt(0)}
             </div>
-            <div>
-              <h2 className="text-sm font-bold text-slate-100 flex items-center gap-2">
-                <span>{currentUser.name}</span>
-                <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">
+            <div className="min-w-0 flex-1">
+              <h2 className="text-sm font-bold text-slate-100 flex items-center gap-2 min-w-0">
+                <span className="truncate">{currentUser.name}</span>
+                <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800 flex-shrink-0">
                   Active
                 </span>
               </h2>
-              <p className="text-xs text-slate-400 font-mono truncate max-w-[240px]">
+              <p className="text-xs text-slate-400 font-mono truncate max-w-full">
                 {formatAddress(currentUser.address, 4)}
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-shrink-0">
             {confirmLogout ? (
               <div className="flex items-center gap-1.5 bg-slate-900 border border-slate-700 px-2 py-1 rounded-lg">
                 <span className="text-[10px] text-slate-300">Log out?</span>
@@ -179,7 +179,10 @@ export const UserWalletModal: React.FC<UserWalletModalProps> = ({ isOpen, onClos
             <button
               id="close-wallet-modal-btn"
               onClick={onClose}
-              className="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors"
+              type="button"
+              aria-label="Close wallet"
+              title="Close wallet"
+              className="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors flex-shrink-0"
             >
               <X className="w-5 h-5" />
             </button>

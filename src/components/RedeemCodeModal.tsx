@@ -35,8 +35,6 @@ export const RedeemCodeModal: React.FC<RedeemCodeModalProps> = ({
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [successMessage, setSuccessMessage] = useState<string>('');
 
-  if (!isOpen) return null;
-
   const handleRedeem = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     setErrorMessage('');
@@ -66,6 +64,8 @@ export const RedeemCodeModal: React.FC<RedeemCodeModalProps> = ({
     });
     return list.slice(0, 4);
   }, [mediaFiles]);
+
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-md overflow-y-auto animate-in fade-in duration-150">

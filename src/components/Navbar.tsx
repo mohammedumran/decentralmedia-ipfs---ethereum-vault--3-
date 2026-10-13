@@ -28,6 +28,7 @@ import { formatAddress } from '../lib/crypto';
 
 interface NavbarProps {
   onOpenWallet: () => void;
+  onOpenCreateVault: () => void;
   onOpenUpload: () => void;
   onOpenRedeem: () => void;
   onOpenWelcome: () => void;
@@ -41,6 +42,7 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({
   onOpenWallet,
+  onOpenCreateVault,
   onOpenUpload,
   onOpenRedeem,
   onOpenWelcome,
@@ -152,6 +154,28 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Right Area: Welcome / Register & Account Pill */}
           <div className="flex items-center gap-2 sm:gap-3">
+            <button
+              id="navbar-create-vault-btn"
+              type="button"
+              onClick={onOpenCreateVault}
+              aria-label="Create a free private vault"
+              title="Create a free private vault"
+              className="flex items-center gap-1.5 p-2 sm:px-3 sm:py-1.5 rounded-lg text-xs font-semibold bg-cyan-950/80 hover:bg-cyan-900/80 text-cyan-300 border border-cyan-700/60 transition-all cursor-pointer"
+            >
+              <Database className="w-4 h-4 sm:w-3.5 sm:h-3.5 text-cyan-400" />
+              <span className="hidden sm:inline">Create Vault</span>
+            </button>
+            <button
+              id="navbar-redeem-code-btn"
+              type="button"
+              onClick={onOpenRedeem}
+              aria-label="Redeem a secret access code"
+              title="Redeem a secret access code"
+              className="flex items-center gap-1.5 p-2 sm:px-3 sm:py-1.5 rounded-lg text-xs font-semibold bg-indigo-950/80 hover:bg-indigo-900/80 text-indigo-300 border border-indigo-700/60 transition-all cursor-pointer"
+            >
+              <KeyRound className="w-4 h-4 sm:w-3.5 sm:h-3.5 text-indigo-400" />
+              <span className="hidden sm:inline">Redeem</span>
+            </button>
             {onOpenAssistant && (
               <button
                 id="navbar-open-assistant-btn"

@@ -58,6 +58,8 @@ export const AuthGatewayView: React.FC<AuthGatewayViewProps> = ({
     importAccountByMnemonic,
     switchAccount,
     currentUser,
+    logoutAccount,
+    verifyAndUnlockAccount,
   } = useAuth();
   const { redeemAccessCode, setSelectedFile, mediaFiles, hostNodes } = useDecentralMedia();
 
@@ -82,6 +84,8 @@ export const AuthGatewayView: React.FC<AuthGatewayViewProps> = ({
   const [generatedAccount, setGeneratedAccount] = useState<UserAccount | null>(null);
   const [showPrivateKey, setShowPrivateKey] = useState(false);
   const [hasConfirmedBackup, setHasConfirmedBackup] = useState(false);
+  const [vaultAccessCode, setVaultAccessCode] = useState('');
+  const [vaultAccessError, setVaultAccessError] = useState<string | null>(null);
 
   // Import Key Form
   const [importKeyType, setImportKeyType] = useState<'privateKey' | 'mnemonic'>('privateKey');
@@ -150,6 +154,8 @@ export const AuthGatewayView: React.FC<AuthGatewayViewProps> = ({
   const handleStartCreate = (e: React.FormEvent) => {
     e.preventDefault();
     setRegError(null);
+    setVaultAccessCode('');
+    setVaultAccessError(null);
     const alias = regName.trim() || 'Creator Vault';
     setIsGeneratingAccount(true);
 
@@ -163,12 +169,26 @@ export const AuthGatewayView: React.FC<AuthGatewayViewProps> = ({
           regSecretCode.trim() || "2026"
         );
         setGeneratedAccount(created);
+        logoutAccount();
       } catch (err: any) {
         setRegError(err?.message || "Failed to generate cryptographic account.");
       } finally {
         setIsGeneratingAccount(false);
       }
     }, 450);
+  };
+
+  const handleEnterCreatedVault = () => {
+    if (!generatedAccount) return;
+
+    const result = verifyAndUnlockAccount(generatedAccount.address, vaultAccessCode);
+    if (!result.success) {
+      setVaultAccessError(result.message || 'Invalid access code. Please try again.');
+      return;
+    }
+
+    setGeneratedAccount(null);
+    if (onExplorePublic) onExplorePublic();
   };
 
   // Handle Import Account via Key
@@ -526,16 +546,34 @@ export const AuthGatewayView: React.FC<AuthGatewayViewProps> = ({
               </span>
             </label>
 
+            <div className="mb-4 space-y-1.5">
+              <label htmlFor="new-vault-access-code" className="text-xs font-semibold text-slate-300">
+                Enter your vault access code / PIN to continue
+              </label>
+              <input
+                id="new-vault-access-code"
+                type="password"
+                autoComplete="one-time-code"
+                value={vaultAccessCode}
+                onChange={(e) => {
+                  setVaultAccessCode(e.target.value);
+                  setVaultAccessError(null);
+                }}
+                placeholder="Enter your PIN (default: 2026)"
+                className="w-full px-3 py-2.5 rounded-xl bg-slate-950 border border-slate-700 focus:border-cyan-500 focus:outline-none text-slate-100 text-sm font-mono"
+              />
+              {vaultAccessError && (
+                <p role="alert" className="text-xs text-rose-300">{vaultAccessError}</p>
+              )}
+            </div>
+
             {/* Enter Vault Button */}
             <button
               id="finish-enter-vault-btn"
-              disabled={!hasConfirmedBackup}
-              onClick={() => {
-                setGeneratedAccount(null);
-                if (onExplorePublic) onExplorePublic();
-              }}
+              disabled={!hasConfirmedBackup || !vaultAccessCode.trim()}
+              onClick={handleEnterCreatedVault}
               className={`w-full py-3 px-4 rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all shadow-lg cursor-pointer ${
-                hasConfirmedBackup
+                hasConfirmedBackup && vaultAccessCode.trim()
                   ? 'bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-slate-950 shadow-cyan-500/25 scale-[1.01]'
                   : 'bg-slate-800 text-slate-500 cursor-not-allowed border border-slate-700'
               }`}

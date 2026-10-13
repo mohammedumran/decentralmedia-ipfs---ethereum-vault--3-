@@ -34,6 +34,7 @@ const MainApp: React.FC = () => {
 
   // Guest Explorer Mode: true by default so another person can view public files without forced login gate
   const [isGuestExploring, setIsGuestExploring] = useState(true);
+  const [focusCreateVault, setFocusCreateVault] = useState(false);
 
   // Emerge experience for new visitors (shows proper website landing and sign in/up interface)
   const [showLandingPage, setShowLandingPage] = useState<boolean>(() => {
@@ -154,6 +155,13 @@ const MainApp: React.FC = () => {
     setActiveTab('assistant');
   };
 
+  React.useEffect(() => {
+    if (focusCreateVault && showLandingPage && activeTab === 'vault') {
+      document.getElementById('auth-interactive-card')?.scrollIntoView({ behavior: 'smooth' });
+      setFocusCreateVault(false);
+    }
+  }, [activeTab, focusCreateVault, showLandingPage]);
+
   const handleDismissWelcome = () => {
     try {
       localStorage.setItem(STORAGE_SEEN_WELCOME, 'true');
@@ -167,6 +175,11 @@ const MainApp: React.FC = () => {
       {/* Top Application Bar */}
       <Navbar
         onOpenWelcome={() => setIsWelcomeOpen(true)}
+        onOpenCreateVault={() => {
+          setActiveTab('vault');
+          setShowLandingPage(true);
+          setFocusCreateVault(true);
+        }}
         onOpenWallet={() => setIsWalletOpen(true)}
         onOpenUpload={() => {
           setShowLandingPage(false);

@@ -173,7 +173,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const cleanSecret = secretCode?.trim() || "2026";
     
     // Check if account already exists with this email
-    const existing = allAccounts.find(a => a.email.toLowerCase() === trimmed);
+    const existing = allAccounts.find(a => a.email?.toLowerCase() === trimmed);
     if (existing) {
       const updated = {
         ...existing,
